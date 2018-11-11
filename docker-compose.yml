@@ -1,0 +1,13 @@
+version: "3.2"
+
+services:
+  freepour:
+    image: apps/freepour:$VERSION
+    build:
+      context: ./
+    ports:
+      - 8443:443
+      - 8080:80
+    volumes:
+      - $APP_PATH:/var/www/
+    tty: true
